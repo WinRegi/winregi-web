@@ -42,7 +42,7 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 glass border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -613,13 +613,8 @@ export default function Home() {
               © 2026 WinRegi. Built with ❤️ by <a href="https://github.com/Anish-ai" className="text-slate-300 hover:text-primary transition-colors">Anish</a> and the community.
             </p>
             <div className="flex gap-4">
-              <a href="https://github.com/Winregi/WinRegi" className="text-slate-400 hover:text-primary transition-colors">
-                <Github className="w-6 h-6" />
-              </a>
-              <a href="https://twitter.com" className="text-slate-400 hover:text-primary transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
+              <a href="https://github.com/Winregi/WinRegi" className="text-slate-400 hover:text-primary hover:underline transition-colors flex items-center gap-1">
+                <Github className="w-6 h-6" /> GitHub
               </a>
             </div>
           </div>
