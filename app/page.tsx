@@ -119,7 +119,7 @@ export default function Home() {
             <Button
               variant="secondary"
               size="lg"
-              href="https://github.com"
+              href="https://github.com/WinRegi/WinRegi"
               className="hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:-translate-y-0.5"
             >
               <Github className="w-5 h-5 mr-2" />
