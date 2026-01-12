@@ -67,7 +67,7 @@ export default function Home() {
               <Github className="w-5 h-5 mr-2" />
               GitHub
             </Button>
-            <Button variant="primary" size="sm" href="https://github.com/Winregi/WinRegi/releases/latest">
+            <Button variant="primary" size="sm" href="https://github.com/WinRegi/WinRegi/releases/download/v1.0.0-beta/WinRegi-v1.0.0-Beta.zip">
               <Download className="w-5 h-5 mr-2" />
               Download
             </Button>
@@ -109,7 +109,7 @@ export default function Home() {
             <Button
               variant="primary"
               size="lg"
-              href="https://github.com/Winregi/WinRegi/releases/latest"
+              href="https://github.com/WinRegi/WinRegi/releases/download/v1.0.0-beta/WinRegi-v1.0.0-Beta.zip"
               className="shadow-[0_0_30px_rgba(16,185,129,0.35)] ring-2 ring-primary/60 hover:-translate-y-0.5"
             >
               <Download className="w-5 h-5 mr-2" />
@@ -582,7 +582,7 @@ export default function Home() {
               <Button
                 variant="secondary"
                 size="lg"
-                href="https://github.com/Winregi/WinRegi/releases/latest"
+                href="https://github.com/WinRegi/WinRegi/releases/download/v1.0.0-beta/WinRegi-v1.0.0-Beta.zip"
                 className="hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:-translate-y-0.5"
               >
                 <Download className="w-5 h-5 mr-2" />
