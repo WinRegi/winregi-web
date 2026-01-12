@@ -29,6 +29,7 @@ import {
 import Button from '@/components/Button';
 import FeatureCard from '@/components/FeatureCard';
 import Section from '@/components/Section';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -49,18 +50,24 @@ export default function Home() {
             className="flex items-center gap-2"
           >
             <Terminal className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold text-white">WinRegi</span>
+            <Image
+              src="/Winregi.svg"
+              alt="WinRegi"
+              width={140}
+              height={40}
+              priority
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex gap-4"
           >
-            <Button variant="ghost" size="sm" href="https://github.com" className="hidden md:inline-flex">
+            <Button variant="ghost" size="sm" href="https://github.com/Winregi/WinRegi" className="hidden md:inline-flex">
               <Github className="w-5 h-5 mr-2" />
               GitHub
             </Button>
-            <Button variant="primary" size="sm" href="#download">
+            <Button variant="primary" size="sm" href="https://github.com/Winregi/WinRegi/releases/latest">
               <Download className="w-5 h-5 mr-2" />
               Download
             </Button>
@@ -102,7 +109,7 @@ export default function Home() {
             <Button
               variant="primary"
               size="lg"
-              href="#download"
+              href="https://github.com/Winregi/WinRegi/releases/latest"
               className="shadow-[0_0_30px_rgba(16,185,129,0.35)] ring-2 ring-primary/60 hover:-translate-y-0.5"
             >
               <Download className="w-5 h-5 mr-2" />
@@ -191,10 +198,10 @@ export default function Home() {
                 You've been there. Your mouse driver stops working, so you head to YouTube and search "Windows mouse driver not working fix". Thirty minutes and five videos later, you're still copying registry paths from sketchy forum posts.
               </p>
               <p className="text-slate-400 text-lg leading-relaxed mb-4">
-                Or maybe you want to disable Windows telemetry, but every guide shows different PowerShell commands. Which one is safe? Will it break something?
+                Then you try ChatGPT: "How do I disable Windows telemetry?" It gives you three different PowerShell commands. Which one is safe? Will it break something? Back to Google. More tabs. More confusion.
               </p>
               <p className="text-slate-400 text-lg leading-relaxed">
-                Hours wasted Googling. Fear of breaking your system. Memorizing cryptic commands. There has to be a better way.
+                Hours wasted jumping between YouTube tutorials, AI chat, and Reddit threads. Fear of breaking your system. Memorizing cryptic commands. There has to be a better way.
               </p>
             </motion.div>
 
@@ -484,6 +491,68 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* FAQ Section */}
+      <Section className="relative z-10 bg-slate-900/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-slate-400">
+              Everything you need to know before getting started
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: "Is WinRegi safe to use?",
+                a: "Absolutely. Every command is analyzed and color-coded by risk level (Safe/Green, Warning/Yellow, Dangerous/Red) before execution. You always review and approve before anything runs on your system."
+              },
+              {
+                q: "Does it work offline?",
+                a: "Yes! WinRegi supports both cloud AI (Google Gemini) and local AI (Ollama). Choose local mode for complete offline operation with full privacy."
+              },
+              {
+                q: "Is WinRegi open source?",
+                a: "Yes, WinRegi is fully open source. You can inspect the code, contribute commands to the database, and suggest improvements on GitHub."
+              },
+              {
+                q: "Will it break my system?",
+                a: "WinRegi includes multiple safety layers: command analysis, risk warnings, and admin privilege checks. Dangerous operations are clearly marked. Future updates will include automatic system restore points."
+              },
+              {
+                q: "Is it free?",
+                a: "Yes, WinRegi is free and open source. It's built by the community, for the community."
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="glass rounded-lg p-6 hover:border-primary/30 transition-all"
+              >
+                <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-3">
+                  <span className="text-primary">Q:</span>
+                  {faq.q}
+                </h3>
+                <p className="text-slate-400 leading-relaxed pl-8">
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* CTA Section */}
       <Section className="relative z-10" id="download">
         <div className="max-w-4xl mx-auto text-center">
@@ -495,31 +564,34 @@ export default function Home() {
             className="glass rounded-2xl p-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Master Windows?
+              Join the Movement
             </h2>
             <p className="text-xl text-slate-400 mb-8">
-              Download WinRegi now and start controlling your system with AI
+              WinRegi is in active development. Star the repo to follow progress and be notified of the official release.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 variant="primary"
                 size="lg"
-                href="#download"
+                href="https://github.com/Winregi/WinRegi"
                 className="shadow-[0_0_30px_rgba(16,185,129,0.35)] ring-2 ring-primary/60 hover:-translate-y-0.5"
               >
-                <Download className="w-5 h-5 mr-2" />
-                Download for Windows
+                <Github className="w-5 h-5 mr-2" />
+                ⭐ Star on GitHub
               </Button>
               <Button
                 variant="secondary"
                 size="lg"
-                href="https://github.com"
+                href="https://github.com/Winregi/WinRegi/releases/latest"
                 className="hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:-translate-y-0.5"
               >
-                <Github className="w-5 h-5 mr-2" />
-                Star on GitHub
+                <Download className="w-5 h-5 mr-2" />
+                Download Beta
               </Button>
             </div>
+            <p className="text-sm text-slate-500 mt-6">
+              ⚡ Follow development • 💬 Report issues • 🎯 Suggest features
+            </p>
           </motion.div>
         </div>
       </Section>
@@ -530,13 +602,18 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
               <Terminal className="w-6 h-6 text-primary" />
-              <span className="text-white font-bold">WinRegi</span>
+              <Image
+                src="/Winregi.svg"
+                alt="WinRegi"
+                width={120}
+                height={34}
+              />
             </div>
             <p className="text-slate-400 text-sm">
-              © 2026 WinRegi. Built with ❤️ by passionate developers.
+              © 2026 WinRegi. Built with ❤️ by <a href="https://github.com/Anish-ai" className="text-slate-300 hover:text-primary transition-colors">Anish</a> and the community.
             </p>
             <div className="flex gap-4">
-              <a href="https://github.com" className="text-slate-400 hover:text-primary transition-colors">
+              <a href="https://github.com/Winregi/WinRegi" className="text-slate-400 hover:text-primary transition-colors">
                 <Github className="w-6 h-6" />
               </a>
               <a href="https://twitter.com" className="text-slate-400 hover:text-primary transition-colors">

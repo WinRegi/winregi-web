@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "WinRegi - Master Your Windows System with AI",
   description: "AI-powered command center for Windows. Translate natural language into safe, executable PowerShell scripts instantly.",
   keywords: ["Windows", "PowerShell", "AI", "System Administration", "Registry Editor", "Automation"],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
